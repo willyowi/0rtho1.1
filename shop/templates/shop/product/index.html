@@ -1,0 +1,533 @@
+<!--
+Author:W3layouts
+Author URL: http://w3layouts.com
+License: Creative Commons Attribution 3.0 Unported
+License URL: http://creativecommons.org/licenses/by/3.0/
+-->
+
+{% load static %}
+{% block content %}
+<!DOCTYPE html>
+<html>
+        <head>
+                <meta charset="utf-8">
+                <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+                <meta http-equiv="x-ua-compatible" content="ie=edge">
+                <title>Ortho Enterprises ltd
+                </title>
+                <!-- Font Awesome -->
+                <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
+                <!-- Bootstrap core CSS -->
+                <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
+                <!-- Material Design Bootstrap -->
+                <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
+                <!-- Your custom styles (optional) -->
+                <link href= "{% static 'css/styles.css' %}" rel="stylesheet">
+                <link href= "{% static 'css/style.css' %}" rel="stylesheet">
+                
+                <script>
+                    addEventListener("load", function() {
+                        setTimeout(hideURLbar, 0);
+                    }, false);
+            
+                    function hideURLbar() {
+                        window.scrollTo(0, 1);
+                    }
+                </script>  
+
+        </head>
+    
+<body>
+    <!-- new mainsec div start -->
+    <div class="main-sec">
+        <!-- //header -->
+        <header class="py-sm-3 pt-3 pb-2" id="home">
+            <div class="container">
+                <!-- nav -->
+                <div class="top-w3pvt d-flex">
+                    <div id="logo">
+                        <h1> <a href=""><span class="log-w3pvt">ORTHO</span></a> <label class="sub-des">Enterprise Limited </label></h1>
+                    </div>
+                    <!-- cart -->
+                    <div class="ml-auto forms  ">
+                        <!-- Right -->
+                        <ul class="ml-auto list-unstyled " >
+                          <li class="nav-item">
+                          <a class="nav-link waves-effect">
+                            <!-- <span class="badge red z-depth-1 mr-1"> 1 </span> -->
+                            <i class="fas fa-shopping-cart"></i>
+                            <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+                    
+                          </a>
+                          <div class="cart">
+                            <!-- Your cart is empty. -->
+                            {% with total_items=cart|length %}
+                              {% if cart|length > 0 %}
+                                Your Cart:
+                                <a href="{% url 'cart:cart_detail' %}">
+                                  {{ total_items }} item{{ total_items|pluralize }},
+                                  Ksh.{{ cart.get_total_price }}
+                                </a>
+                                {% else %}
+                                <span class="badge red z-depth-1 mr-1">Your cart is Empty</span>
+                                {% endif %}
+                                {% endwith %}
+                          </div>
+                          </li>
+                         
+                         
+                         
+                        
+                        </ul>
+                      </div>
+                      <!-- cart -->
+
+                </div>
+                <div class="nav-top-wthree">
+                    <nav>
+                        <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+                        <input type="checkbox" id="drop" />
+                        <ul class="menu">
+                            <li class="active"><a href="{{ '/' }}">Home</a></li>
+                            <li><a href="about.html">About Us</a></li>
+                            <li>
+                                <!-- First Tier Drop Down -->
+                                
+                                <a href="#">Categories <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                                <input type="checkbox" id="drop-2" />
+                                <ul>
+                                  
+                                    {% for c in categories %}
+                                        <li class="dropdown-item" {% if category.slug == c.slug %}class="selected"
+                                        {% endif %}>
+                                        <a class="dropdown-item"  href="{{ c.slug.url }}">  {{ c.name }}</a>
+                            
+                                        </li>
+                                        {% endfor %}
+                                    
+                                </ul>   
+                            </li>
+
+                            <li><a href="shop.html">Collections</a></li>
+                            <li><a href="contact.html">Contact</a></li>
+                        </ul>
+                    </nav>
+                    <!-- //nav -->
+                    <div class="search-form ml-auto">
+                        <div class="form-w3layouts-grid">
+                            <form action="#" method="post" class="newsletter">
+                                <input class="search" type="search" placeholder="Search here..." required="">
+                                <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="clearfix"></div>
+                </div>
+            </div>
+        </header>
+        <!-- //header -->
+        <!--/banner-->
+        <div class="banner-wthree-info container">
+            <div class="row">
+                <div class="col-lg-5 banner-left-info">
+                    <h3>Growing to meet your needs,<span >We Care<span ></h3>
+                    <a href="{{'shopnow' }}" class="btn shop">Shop Now</a>
+                </div>
+
+                <div class="col-lg-7 banner-img">
+
+                    
+                    
+                    <!-- <img src="{{ 'static/images/ortho3.png' }} "  class="img-fluid " alt="Image moja" style="min-height: 250px;  " > -->
+                    <div id="carousel-example-1z" class="carousel slide carousel-fade pt-4" data-ride="carousel">
+
+                        <!--Indicators-->
+                        <ol class="carousel-indicators">
+                          <li data-target="#carousel-example-1z" data-slide-to="0" class="active"></li>
+                          <li data-target="#carousel-example-1z" data-slide-to="1"></li>
+                          <li data-target="#carousel-example-1z" data-slide-to="2"></li>
+                        </ol>
+                        <!--/.Indicators-->
+                    
+                        <!--Slides-->
+                        <div class="carousel-inner" role="listbox">
+                    
+                          <!--First slide start-->
+                          <div class="carousel-item active">
+                            <div class="view" style="background-image: url( '/static/images/bag1.png');  " >
+
+                            
+                              <!-- Mask & flexbox options-->
+                              <div class="mask  d-flex justify-content-center align-items-center">
+                                 <!-- <img src="{{ 'static/images/bag1.png' }} "  class="img-fluid " alt="Image moja" style="min-height: 250px;  " > -->
+                              </div>
+                              <!-- Mask & flexbox options-->
+                    
+                            </div>
+                          </div>
+                          <!--/First slide  end-->
+                    
+                          <!--Second slide start-->
+                          <div class="carousel-item">
+                            <div class="view">
+                                <div class="view" style="background-image: url( '/static/images/ortho3.png');  " >
+
+                    
+                              <!-- Mask & flexbox options-->
+                              <div class="mask  d-flex justify-content-center align-items-center">
+                               <!-- <img src="{{ 'static/images/ortho3.png' }} "  class="img-fluid " alt="Image moja" style="min-height: 250px;  " > -->
+
+                              </div>
+                              <!-- Mask & flexbox options-->
+                    
+                            </div>
+                          </div>
+                          <!--/Second slide  end-->
+                    
+                          <!--Third slide start-->
+                          <div class="carousel-item">
+                            <div class="view">
+                                <div class="view" style="background-image: url( '/static/images/bag.png');  " >
+
+                    
+                              <!-- Mask & flexbox options-->
+                              <div class="mask  d-flex justify-content-center align-items-center">
+                                <!-- <img src="{{ 'static/images/bag.png' }} "  class="img-fluid " alt="Image moja" style="min-height: 250px;  " > -->
+
+                                </div>
+                                <!-- Content -->
+                    
+                              </div>
+                              <!-- Mask & flexbox options-->
+                    
+                            </div>
+                          </div>
+                          <!--/Third slide end-->
+                    
+                        </div>
+                        <div>
+                            <a class="carousel-control-prev" href="#carousel-example-1z" role="button" data-slide="prev">
+                                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Previous</span>
+                              </a>
+                              <a class="carousel-control-next" href="#carousel-example-1z" role="button" data-slide="next">
+                                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                <span class="sr-only">Next</span>
+                              </a>
+                              <!--/.Controls-->
+                          
+                            </div>
+
+
+                    </div>
+
+                     <!-- slide controls start -->
+                     
+                        <!-- slide controls end -->
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- new mainsec div end -->
+                
+    
+
+    <!-- //banner-->
+    <!--/banner-bottom -->
+    <section class="banner-bottom py-5">
+        <div class="container py-md-3">
+            <div class="row grids-wthree-info text-center">
+                <div class="col-lg-4 ab-content">
+                    <div class="ab-info-con">
+                        <h4>Proud to care.</h4>
+                        <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 ab-content">
+                    <div class="ab-info-con">
+                        <h4>Depend on Us for Life. </h4>
+                        <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
+                    </div>
+                </div>
+                <div class="col-lg-4 ab-content">
+                    <div class="ab-info-con">
+                        <h4>We’re in this together</h4>
+                        <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </section>
+    <!-- /banner-bottom -->
+    <!--/banner-bottom -->
+    <section class="collections">
+        <div class="container-fluid">
+            <div class="row">
+                <div class="col-md-8 ab-content-img">
+                    
+                </div>
+                <div class="col-md-4 ab-content text-center p-lg-5 p-3 my-lg-5">
+                    <h4>Feel Better</h4>
+                    <p>  Add Back support  and Neck support  photos on the left.And  have a short description here.</p>
+                    <a href="shop.html" class="btn shop mt-3">Shop Now</a>
+
+                </div>
+            </div>
+        </div>
+    </section>
+    <br>
+    <!-- /banner-bottom -->
+    <!--/collections -->
+    <!-- <section class="banner-bottom py-5">
+        <div class="container py-md-5">
+
+            <h3 class="title-wthree mb-lg-5 mb-4 text-center">Safety Meets Style </h3>
+            <div class="row text-center">
+
+
+                <div class="col-md-4 content-gd-wthree">
+                    <img src="images/c1.jpg" class="img-fluid" alt="" />
+                </div>
+                <div class="col-md-4 content-gd-wthree ab-content py-lg-5 my-lg-5">
+                    <h4>Need Extra Space ?</h4>
+                    <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
+                    <a href="shop.html" class="btn shop mt-3">Shop Now</a>
+
+                </div>
+                <div class="col-md-4 content-gd-wthree">
+                    <img src="images/c2.jpg" class="img-fluid" alt="" />
+                </div>
+            </div>
+
+        </div>
+    </section> -->
+    <!-- //collections-->
+    <!-- /mid-section -->
+    <!-- <section class="mid-section">
+        <div class="d-lg-flex p-0">
+            <div class="col-lg-6 bottom-w3pvt-left p-lg-0">
+                <img src="images/ab1.jpg" class="img-fluid" alt="" />
+                <div class="pos-wthree">
+                    <h4 class="text-wthree">50% Off Any <br> Women's Bags</h4>
+                    <a href="shop.html" class="btn shop mt-3">Shop Now</a>
+                </div>
+            </div>
+            <div class="col-lg-6 bottom-w3pvt-left bottom-w3pvt-right p-lg-0">
+                <img src="images/ab2.jpg" class="img-fluid" alt="" />
+                <div class="pos-w3pvt">
+                    <h4 class="text-w3pvt">30% Off Any <br> Men's Bags</h4>
+                    <a href="shop.html" class="btn shop mt-3">Shop Now</a>
+                </div>
+            </div>
+        </div>
+    </section> -->
+    <!-- //mid-section -->
+
+    <!--/gallery -->
+    <!-- <section class="banner-bottom py-5">
+        <div class="container py-md-5">
+
+
+            <div class="row">
+                <div class="col-lg-4 gallery-content-info text-center mt-lg-5">
+                    <h3 class="title-wthree mb-lg-5 mb-4">Trending Now </h3>
+                    <p>Lorem ipsum dolor sit,Nulla pellentesque dolor ipsum laoreet eleifend integer,Pellentesque maximus libero.</p>
+                    <a href="shop.html" class="btn shop mt-3">Shop Now</a>
+
+                </div>
+                div class="col-lg-8 gallery-content">
+                    <div class="row">
+                        <div class="col-md-4 col-sm-6 gal-img">
+                            <a href="#gal1"><img src="images/g1.jpg" alt="Baggage" class="img-fluid mt-4"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gal-img">
+                            <a href="#gal2"><img src="images/g2.jpg" alt="Baggage" class="img-fluid mt-4"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gal-img">
+                            <a href="#gal3"><img src="images/g3.jpg" alt="Baggage" class="img-fluid mt-4"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gal-img">
+                            <a href="#gal1"><img src="images/g4.jpg" alt="Baggage" class="img-fluid mt-4"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gal-img">
+                            <a href="#gal2"><img src="images/g5.jpg" alt="Baggage" class="img-fluid mt-4"></a>
+                        </div>
+                        <div class="col-md-4 col-sm-6 gal-img">
+                            <a href="#gal3"><img src="images/g6.jpg" alt="Baggage" class="img-fluid mt-4"></a>
+                        </div>
+
+                    </div> -->
+                    <!-- gallery popups -->
+                    <!-- popup-->
+                    <!-- <div id="gal1" class="popup-effect">
+                        <div class="popup">
+                            <img src="images/g1.jpg" alt="Popup image" class="img-fluid mt-4" />
+                            <a class="close" href="#gallery">&times;</a>
+                        </div>
+                    </div> -->
+                    <!-- //popup -->
+                    <!-- popup-->
+                    <!-- <div id="gal2" class="popup-effect">
+                        <div class="popup">
+                            <img src="images/g2.jpg" alt="Popup image" class="img-fluid mt-4" />
+                            <a class="close" href="#gallery">&times;</a>
+                        </div>
+                    </div> -->
+                    <!-- //popup -->
+                    <!-- popup-->
+                    <!-- <div id="gal3" class="popup-effect">
+                        <div class="popup">
+                            <img src="images/g3.jpg" alt="Popup image" class="img-fluid mt-4" />
+                            <a class="close" href="#gallery">&times;</a>
+                        </div>
+                    </div> -->
+                    <!-- //popup -->
+                    <!-- //gallery popups -->
+
+                <!-- </div>
+            </div>
+
+        </div>
+    </section> --> 
+    <!-- //gallery-->
+    <!--/newsletter -->
+    <!-- <section class="newsletter-w3pvt py-5">
+        <div class="container py-md-5">
+            <form method="post" action="#">
+                <p class="text-center">Subscribe to the Handbags Store mailing list to receive updates on new arrivals, special offers and other discount information.</p>
+               <div class="row subscribe-sec">
+                    <div class="col-md-9">
+                        <input type="email" class="form-control" id="email" placeholder="Enter Your Email.." name="email" required="">
+
+                    </div>
+                    <div class="col-md-3">
+
+                        <button type="submit" class="btn submit">Subscribe</button>
+                    </div>
+
+                </div>
+            </form>
+        </div>
+    </section> -->
+    <!--//newsletter -->
+    <!--/shipping-->
+    <section class="shipping-wthree main-sec ">
+        <div class="shiopping-grids d-lg-flex">
+            <div class="col-lg-4 shiopping-w3pvt-gd text-center">
+                <div class="icon-gd"><span class="fa fa-truck" aria-hidden="true"></span>
+                </div>
+                <div class="icon-gd-info">
+                    <h3>Door-Step deliveries</h3>
+                    <p>On all order over $2000</p>
+                </div>
+            </div>
+            <div class="col-lg-4 shiopping-w3pvt-gd sec text-center">
+                <div class="icon-gd"><span class="fa fa-bullhorn" aria-hidden="true"></span></div>
+                <div class="icon-gd-info">
+                    <h3>Reliable Payments Options</h3>
+                    <p>On 1st exchange in 30 days</p>
+                </div>
+            </div>
+            <div class="col-lg-4 shiopping-w3pvt-gd text-center">
+                <div class="icon-gd"> <span class="fa fa-gift" aria-hidden="true"></span></div>
+                <div class="icon-gd-info">
+                    <h3>After sale Services </h3>
+                    <p>Register &amp; save up to $29%</p>
+                </div>
+
+            </div>
+        </div>
+
+    </section>
+    <!--//shipping-->
+    <!-- footer -->
+    <div class="footer_agileinfo_topf py-5 main-sec">
+        <div class="container py-md-5">
+            <div class="row">
+                <!-- <div class="col-lg-3 footer_wthree_gridf mt-lg-5"> -->
+                    <div id="logo">
+                        <h1> <a href="index.html"><span class="log-w3pvt">ORTHO</span></a> <label class="sub-des">Enterprise Limited </label></h1>
+                    </div>
+                <!-- </div> -->
+                <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-4">
+                    <ul class="footer_wthree_gridf_list">
+                        <li>
+                            <a href="index.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Home</a>
+                        </li>
+                        <li>
+                            <a href="about.html"><span class="fa fa-angle-right" aria-hidden="true"></span> About</a>
+                        </li>
+                        <li>
+                            <a href="shop.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Shop</a>
+                        </li>
+                        <li>
+                            <a href="shop.html"><span class="fa fa-angle-right" aria-hidden="true"></span>Collections</a>
+                        </li>
+
+                    </ul>
+                </div>
+                <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
+                    <ul class="footer_wthree_gridf_list">
+                        <li>
+                            <a href="single.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Extra Page</a>
+                        </li>
+
+                        <li>
+                            <a href="#"><span class="fa fa-angle-right" aria-hidden="true"></span> Terms & Conditions</a>
+                        </li>
+                        <li>
+                            <a href="single.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Shop Single</a>
+                        </li>
+                        <li>
+                            <a href="contact.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
+                        </li>
+                    </ul>
+                </div>
+
+                <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
+                    <ul class="footer_wthree_gridf_list">
+                        <li>
+                            <a href="login.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Login </a>
+                        </li>
+
+                        <li>
+                            <a href="register.html"><span class="fa fa-angle-right" aria-hidden="true"></span>Register</a>
+                        </li>
+                        <li>
+                            <a href="#"><span class="fa fa-angle-right" aria-hidden="true"></span>Privacy & Policy</a>
+                        </li>
+
+                    </ul>
+                </div>
+            </div>
+
+            <div class="w3ls-fsocial-grid">
+                <h3 class="sub-w3ls-headf">Follow Us</h3>
+                <div class="social-ficons">
+                    <ul>
+                        <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
+                        <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
+                        <li><a href="#"><span class="fa fa-google"></span>Google</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="move-top text-center mt-lg-4 mt-3">
+                <a href="#home"><span class="fa fa-angle-double-up" aria-hidden="true"></span></a>
+            </div>
+        </div>
+    </div>
+    <!-- //footer -->
+
+    <!-- copyright -->
+    <div class="cpy-right text-center py-3">
+        <p>© Ortho enterprises Limited. All rights reserved | 
+        </p>
+
+    </div>
+    <!-- //copyright -->
+
+</body>
+
+</html>
+{% endblock %}

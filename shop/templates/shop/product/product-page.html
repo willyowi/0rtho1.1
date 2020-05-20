@@ -1,140 +1,21 @@
 {% extends "shop/base.html" %}
 {% load static %}
 {% block content %}
-<!DOCTYPE html>
-<html lang="en">
-
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <meta http-equiv="x-ua-compatible" content="ie=edge">
-  <title>Details</title>
-  <!-- Font Awesome -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-    <!-- Bootstrap core CSS -->
-    <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
-    <!-- Material Design Bootstrap -->
-    <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
-    <!-- Your custom styles (optional) -->
-    <link href= "{% static 'css/style.min.css' %}" rel="stylesheet">
-
-
-    <style type="text/css">
-        html,
-        body,
-        header,
-        .carousel {
-          height: 60vh;
-        }
-    
-        @media (max-width: 740px) {
-    
-          html,
-          body,
-          header,
-          .carousel {
-            height: 100vh;
-          }
-        }
-    
-        @media (min-width: 800px) and (max-width: 850px) {
-    
-          html,
-          body,
-          header,
-          .carousel {
-            height: 100vh;
-          }
-        }
-        
-    
-      </style>
-
- <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
-  <!-- Bootstrap core CSS -->
-  <link href="css/bootstrap.min.css" rel="stylesheet">
-  <!-- Material Design Bootstrap -->
-  <link href="css/mdb.min.css" rel="stylesheet">
-  <!-- Your custom styles (optional) -->
-  <link href="css/style.min.css" rel="stylesheet">
-</head>
 
 <body>
 
   <!-- Navbar -->
-  <nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-    <div class="container">
-
-      <!-- Brand -->
-      <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-        <strong class="blue-text">Ortho Logo</strong>
-      </a>
-
-      <!-- Collapse -->
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-        aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-
-      <!-- Links -->
-      <div class="collapse navbar-collapse" id="navbarSupportedContent">
-
-        <!-- Left -->
-        <ul class="navbar-nav mr-auto">
-          <li class="nav-item active">
-            <a class="nav-link waves-effect" href="#">Home
-              <span class="sr-only">(current)</span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About Us</a>
-          </li>
-          <!-- <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-              target="_blank">Free download</a>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-              tutorials</a> -->
-          </li>
-        </ul>
-
-        <!-- Right -->
-        <ul class="navbar-nav nav-flex-icons">
-          <li class="nav-item">
-            <a class="nav-link waves-effect">
-              <span class="badge red z-depth-1 mr-1">  </span>
-              <i class="fas fa-shopping-cart"></i>
-              <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-facebook-f"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://twitter.com/MDBootstrap" class="nav-link waves-effect" target="_blank">
-              <i class="fab fa-twitter"></i>
-            </a>
-          </li>
-          <li class="nav-item">
-            <a href="https://github.com/mdbootstrap/bootstrap-material-design" class="nav-link border border-light rounded waves-effect"
-              target="_blank">
-              <i class="fab fa-github mr-2"></i>MDB GitHub
-            </a>
-          </li>
-        </ul>
-
-      </div>
-
-    </div>
-  </nav>
+  <!-- <div class=" inner-page"> -->
+    <!-- //header -->
+    <!-- from base -->
+    <!-- //header -->
+  <!-- </div> -->
   <!-- Navbar -->
 
   <!--Main layout-->
   <main class="mt-5 pt-4">
-      
+  <div class="container py-md-3">
+   
      <h1>{{ product.name }}</h1> 
     
 
@@ -171,7 +52,7 @@
         <!--Grid column-->
         <div class="col-md-6 mb-4">
 
-          <img src="{{ product.image.url }}" style="height: 300px" class="img-fluid" alt="">
+          <img src="{{ product.image.url }}" style="height: 400px" class="img-fluid" alt="">
 
         </div>
         <!--Grid column-->
@@ -284,72 +165,87 @@
       <!--Grid row-->
 
     </div>
+  </div>
   </main>
   <!--Main layout-->
 
-  <!--Footer-->
-  <footer class="page-footer text-center font-small mt-4 wow fadeIn">
+  <!-- footer -->
+  <div class="footer_agileinfo_topf py-5 main-sec ">
+    <div class="container py-md-5 "  >
+        <div class="row">
+            <!-- <div class="col-lg-3 footer_wthree_gridf mt-lg-5"> -->
+                <div id="logo">
+                    <h1> <a href="index.html"><span class="log-w3pvt">ORTHO</span></a> <label class="sub-des">Enterprise Limited </label></h1>
+                </div>
+            <!-- </div> -->
+            <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-4">
+                <ul class="footer_wthree_gridf_list">
+                    <li>
+                        <a href="index.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Home</a>
+                    </li>
+                    <li>
+                        <a href="about.html"><span class="fa fa-angle-right" aria-hidden="true"></span> About</a>
+                    </li>
+                    <li>
+                        <a href="shop.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Shop</a>
+                    </li>
+                    <li>
+                        <a href="shop.html"><span class="fa fa-angle-right" aria-hidden="true"></span>Collections</a>
+                    </li>
 
-    <!--Call to action-->
-    <div class="pt-4">
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/docs/jquery/getting-started/download/" target="_blank"
-        role="button">Download MDB
-        <i class="fas fa-download ml-2"></i>
-      </a>
-      <a class="btn btn-outline-white" href="https://mdbootstrap.com/education/bootstrap/" target="_blank" role="button">Start
-        free tutorial
-        <i class="fas fa-graduation-cap ml-2"></i>
-      </a>
+                </ul>
+            </div>
+            <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
+                <ul class="footer_wthree_gridf_list">
+                    <li>
+                        <a href="single.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Extra Page</a>
+                    </li>
+
+                    <li>
+                        <a href="#"><span class="fa fa-angle-right" aria-hidden="true"></span> Terms & Conditions</a>
+                    </li>
+                    <li>
+                        <a href="single.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Shop Single</a>
+                    </li>
+                    <li>
+                        <a href="contact.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Contact Us</a>
+                    </li>
+                </ul>
+            </div>
+
+            <div class="col-lg-3 footer_wthree_gridf mt-md-0 mt-sm-4 mt-3">
+                <ul class="footer_wthree_gridf_list">
+                    <li>
+                        <a href="login.html"><span class="fa fa-angle-right" aria-hidden="true"></span> Login </a>
+                    </li>
+
+                    <li>
+                        <a href="register.html"><span class="fa fa-angle-right" aria-hidden="true"></span>Register</a>
+                    </li>
+                    <li>
+                        <a href="#"><span class="fa fa-angle-right" aria-hidden="true"></span>Privacy & Policy</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+
+        <div class="w3ls-fsocial-grid">
+            <h3 class="sub-w3ls-headf">Follow Us</h3>
+            <div class="social-ficons">
+                <ul>
+                    <li><a href="#"><span class="fa fa-facebook"></span> Facebook</a></li>
+                    <li><a href="#"><span class="fa fa-twitter"></span> Twitter</a></li>
+                    <li><a href="#"><span class="fa fa-google"></span>Google</a></li>
+                </ul>
+            </div>
+        </div>
+        <div class="move-top text-center mt-lg-4 mt-3">
+            <a href="#home"><span class="fa fa-angle-double-up" aria-hidden="true"></span></a>
+        </div>
     </div>
-    <!--/.Call to action-->
-
-    <hr class="my-4">
-
-    <!-- Social icons -->
-    <div class="pb-4">
-      <a href="https://www.facebook.com/mdbootstrap" target="_blank">
-        <i class="fab fa-facebook-f mr-3"></i>
-      </a>
-
-      <a href="https://twitter.com/MDBootstrap" target="_blank">
-        <i class="fab fa-twitter mr-3"></i>
-      </a>
-
-      <a href="https://www.youtube.com/watch?v=7MUISDJ5ZZ4" target="_blank">
-        <i class="fab fa-youtube mr-3"></i>
-      </a>
-
-      <a href="https://plus.google.com/u/0/b/107863090883699620484" target="_blank">
-        <i class="fab fa-google-plus-g mr-3"></i>
-      </a>
-
-      <a href="https://dribbble.com/mdbootstrap" target="_blank">
-        <i class="fab fa-dribbble mr-3"></i>
-      </a>
-
-      <a href="https://pinterest.com/mdbootstrap" target="_blank">
-        <i class="fab fa-pinterest mr-3"></i>
-      </a>
-
-      <a href="https://github.com/mdbootstrap/bootstrap-material-design" target="_blank">
-        <i class="fab fa-github mr-3"></i>
-      </a>
-
-      <a href="http://codepen.io/mdbootstrap/" target="_blank">
-        <i class="fab fa-codepen mr-3"></i>
-      </a>
-    </div>
-    <!-- Social icons -->
-
-    <!--Copyright-->
-    <div class="footer-copyright py-3">
-      © 2019 Copyright:
-      <a href="https://mdbootstrap.com/education/bootstrap/" target="_blank"> MDBootstrap.com </a>
-    </div>
-    <!--/.Copyright-->
-
-  </footer>
-  <!--/.Footer-->
+</div>
+<!-- //footer -->
 
   <!-- SCRIPTS -->
   <!-- JQuery -->

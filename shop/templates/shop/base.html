@@ -11,13 +11,14 @@
                 <!-- Font Awesome -->
                 <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.11.2/css/all.css">
                 <!-- Bootstrap core CSS -->
-                <link href="{% static 'css/bootstrap.min.css' %}" rel="stylesheet">
+                <link href="{% static 'css/bootstrap.css' %}" rel="stylesheet">
                 <!-- Material Design Bootstrap -->
                 <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
                 <!-- Your custom styles (optional) -->
-                <link href= "{% static 'css/style.min.css' %}" rel="stylesheet">
-                <style type="text/css">
-                  html,
+                <link href= "{% static 'css/styles.css' %}" rel="stylesheet">
+                <link href= "{% static 'css/style.css' %}" rel="stylesheet">
+                 <!-- <style type="text/css"> --> 
+                  <!-- html,
                   body,
                   header,
                   .carousel {
@@ -42,39 +43,146 @@
                     .carousel {
                       height: 100vh;
                     }
-                  }
+                  } -->
               
-                </style>
-              </head>
-
+                <!-- </style> -->
+               
 <!--     Fonts and icons     -->
 <link rel="stylesheet" type="text/css"
 href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons" />
 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css">
+
+<script>
+  addEventListener("load", function() {
+      setTimeout(hideURLbar, 0);
+  }, false);
+
+  function hideURLbar() {
+      window.scrollTo(0, 1);
+  }
+</script>
+
 </head>
 <body>
-
+<div class="main-sec">
 <div class="container">
-<div id="header">
-    <a href="/" class="logo"> YAYO MALOOKU</a>
-</div>
-<div id="subheader">
-    <div class="cart">
-        <!-- Your cart is empty. -->
-        {% with total_items=cart|length %}
-            {% if cart|length > 0 %}
-                Your Cart:
-                <a href="{% url 'cart:cart_detail' %}">
-                    {{ total_items }} item{{ total_items|pluralize }},
-                    Ksh.{{ cart.get_total_price }}
-                </a>
-                {% else %}
-                Your cart is Empty
-                {% endif %}
-                {% endwith %}
+  <header class="py-sm-3 pt-3 pb-2" id="home">
+    <div class="container">
+        <!-- nav -->
+        <div class="top-w3pvt d-flex">
+            <div id="logo">
+                <h1> <a href=""><span class="log-w3pvt">ORTHO</span></a> <label class="sub-des">Enterprise Limited </label></h1>
+            </div>
+
+            <!-- <div class="forms ml-auto">
+                <a href="login.html" class="btn"><span class="fa fa-user-circle-o"></span> Sign In</a>
+                <a href="register.html" class="btn"><span class="fa fa-pencil-square-o"></span> Sign Up</a>
+            </div> -->
+
+            
+           
+                
+                
+              <div class="ml-auto forms  ">
+                <!-- Right -->
+                <ul class="ml-auto list-unstyled " >
+                  <li class="nav-item">
+                  <a class="nav-link waves-effect">
+                    <!-- <span class="badge red z-depth-1 mr-1"> 1 </span> -->
+                    <i class="fas fa-shopping-cart"></i>
+                    <span class="clearfix d-none d-sm-inline-block"> Cart </span>
+            
+                  </a>
+                  <div class="cart">
+                    <!-- Your cart is empty. -->
+                    {% with total_items=cart|length %}
+                      {% if cart|length > 0 %}
+                        Your Cart:
+                        <a href="{% url 'cart:cart_detail' %}">
+                          {{ total_items }} item{{ total_items|pluralize }},
+                          Ksh.{{ cart.get_total_price }}
+                        </a>
+                        {% else %}
+                        <span class="badge red z-depth-1 mr-1">Your cart is Empty</span>
+                        {% endif %}
+                        {% endwith %}
+                  </div>
+                  </li>
+                 
+                 
+                 
+                
+                </ul>
+              </div>
+            
+                
+            
+              
+        </div>
+        <div class="nav-top-wthree">
+            <nav>
+                <label for="drop" class="toggle"><span class="fa fa-bars"></span></label>
+                <input type="checkbox" id="drop" />
+                <ul class="menu">
+                    <li class="active"><a href="{{ '/' }}">Home</a></li>
+                    <li><a href="  ">About Us</a></li>
+                    <li>
+                      <!-- First Tier Drop Down -->
+                      
+                      <a href="#">Categories <span class="fa fa-angle-down" aria-hidden="true"></span></a>
+                      <input type="checkbox" id="drop-2" />
+                      <ul>
+                        
+                          {% for c in categories %}
+                              <li class="dropdown-item" {% if category.slug == c.slug %}class="selected"
+                              {% endif %}>
+                              <a class="dropdown-item"  href="{{ c.slug.url }}">  {{ c.name }}</a>
+                  
+                              </li>
+                              {% endfor %}
+                          
+                      </ul>   
+                  </li>
+
+                    <li><a href="shop.html">Collections</a></li>
+                    <li><a href="contact.html">Contact</a></li>
+                </ul>
+            </nav>
+            <!-- //nav -->
+            <div class="search-form ml-auto">
+                <div class="form-w3layouts-grid">
+                    <form action="#" method="post" class="newsletter">
+                        <input class="search" type="search" placeholder="Search here..." required="">
+                        <button class="form-control btn" value=""><span class="fa fa-search"></span></button>
+                    </form>
+                </div>
+            </div>
+            <div class="clearfix"></div>
+        </div>
     </div>
+</header>
 </div>
-<div id="content">
+
+<!-- <div class="container" id="subheader">
+  <div class="cart">
+    
+    {% with total_items=cart|length %}
+        {% if cart|length > 0 %}
+            Your Cart Has:
+            <a href="{% url 'cart:cart_detail' %}">
+                {{ total_items }} item{{ total_items|pluralize }},
+            </a>
+            With a total cost of:
+            <a href="{% url 'cart:cart_detail' %}"> 
+              Ksh.{{ cart.get_total_price }}</a>
+            {% else %}
+            Your cart is Empty
+            {% endif %}
+            {% endwith %}
+  
+</div>
+</div> -->
+<div class="main-sec" id="content">
 {% block content %}
 {% endblock %}
 </div>

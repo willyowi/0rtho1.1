@@ -18,130 +18,24 @@
   <link href="{% static 'css/mdb.min.css' %}" rel="stylesheet">
   <!-- Your custom styles (optional) -->
   <link href= "{% static 'css/style.min.css' %}" rel="stylesheet">
-  <style type="text/css">
-    html,
-    body,
-    header,
-    .carousel {
-      height: 60vh;
-    }
-
-    @media (max-width: 740px) {
-
-      html,
-      body,
-      header,
-      .carousel {
-        height: 100vh;
-      }
-    }
-
-    @media (min-width: 800px) and (max-width: 850px) {
-
-      html,
-      body,
-      header,
-      .carousel {
-        height: 100vh;
-      }
-    }
-    .carousel {
-      
-      width: 800px
-    }
-
-  </style>
+ 
 </head>
 
 <body>
-		<nav class="navbar fixed-top navbar-expand-lg navbar-light white scrolling-navbar">
-				<div class="container">
-			
-				  <!-- Brand -->
-				  <a class="navbar-brand waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">
-					<strong class="blue-text">MDB</strong>
-				  </a>
-			
-				  <!-- Collapse -->
-				  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
-					aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-					<span class="navbar-toggler-icon"></span>
-				  </button>
-			
-				  <!-- Links -->
-				  <div class="collapse navbar-collapse" id="navbarSupportedContent">
-			
-					<!-- Left -->
-					<ul class="navbar-nav mr-auto">
-					  <li class="nav-item active">
-						<a class="nav-link waves-effect" href="#">Home
-						  <span class="sr-only">(current)</span>
-						</a>
-					  </li>
-					  <li class="nav-item">
-						<a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/" target="_blank">About Us</a>
-					  </li>
-					  <!-- <li class="nav-item">
-						<a class="nav-link waves-effect" href="https://mdbootstrap.com/docs/jquery/getting-started/download/"
-						  target="_blank">Free download</a>
-					  </li> -->
-					  <!-- <li class="nav-item">
-						<a class="nav-link waves-effect" href="https://mdbootstrap.com/education/bootstrap/" target="_blank">Free
-						  tutorials</a>
-					  </li> -->
-					</ul>
-			
-					<!-- Right -->
-					<ul class="navbar-nav nav-flex-icons">
-					  <li class="nav-item">
-						<a class="nav-link waves-effect">
-						  <!-- <span class="badge red z-depth-1 mr-1"> 1 </span> -->
-						  <i class="fas fa-shopping-cart"></i>
-						  <span class="clearfix d-none d-sm-inline-block"> Cart </span>
-			
-						</a>
-						<div class="cart">
-							<!-- Your cart is empty. -->
-							{% with total_items=cart|length %}
-								{% if cart|length > 0 %}
-									Your Cart:
-									<a href="{% url 'cart:cart_detail' %}">
-										{{ total_items }} item{{ total_items|pluralize }},
-										Ksh.{{ cart.get_total_price }}
-									</a>
-									{% else %}
-									<span class="badge red z-depth-1 mr-1">Your cart is Empty</span>
-									{% endif %}
-									{% endwith %}
-						</div>
-					  </li>
-					  <li class="nav-item">
-						<a href="https://www.facebook.com/mdbootstrap" class="nav-link waves-effect" target="_blank">
-						  <i class="fab fa-facebook-f"></i>
-						</a>
-					  </li>
-					 
-					 
-					
-					</ul>
-			
-				  </div>
-			
-				</div>
-			  </nav>
+		
 
 
 	<section id="cart_items">
 		<div class="container">
-			<div class="breadcrumbs">
+			<div class="breadcrumbs  "  >
 				<ol class="breadcrumb">
-				  <li><a href="#">Home  <br> <br>  </a></li> 
+				  
 				  <br>
 				  <li class="active">Shopping Cart</li>
 				</ol>
 			</div>
-			<div class="table-responsive cart_info">
-				<table class="table table-condensed">
+			<div class="table-responsive cart_info  ">
+				<table class="table  table-condensed">
 					<thead>
 						<tr class="cart_menu">
 							<td class="image">Image</td>
@@ -181,7 +75,7 @@
 					</tbody>
 				</table>
 				<p class="text-right">
-					<button type="button" class="btn btn-outline-primary"><a href="{% url 'shop:product_list' %}" class="button
+					<button type="button" class="btn btn-outline-primary"><a href="{% url 'shop:shop_now' %}" class="button
 						light">Continue shopping</a></button>
 
 						<button type="button" class="btn btn-outline-primary"><a href="{% url 'orders:order_create' %}" class="button">
